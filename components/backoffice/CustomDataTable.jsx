@@ -12,8 +12,8 @@ export default function CustomDataTable() {
   const itemStartIndex = startIndex + 1;
   const itemEndIndex = Math.min(startIndex + pageSize, data.length);
   return (
-    <div>
-      <h2 className="text-xl font-bold mt-6 mb-1 text-center">Recent Orders</h2>
+    <div className="mt-8">
+      <h2 className="text-xl font-bold mt-6 mb-1 text-center text-slate-800 dark:text-slate-50">Recent Orders</h2>
       {/* Table */}
       <div className="p-8">
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg z-0" >
@@ -81,7 +81,7 @@ export default function CustomDataTable() {
                     }
                 </tbody>
             </table>
-            <nav className="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
+            <nav className="flex items-center flex-column flex-wrap md:flex-row justify-between p-4" aria-label="Table navigation">
                 <span className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing <span className="font-semibold text-gray-900 dark:text-white">{itemStartIndex} - {itemEndIndex}</span> of <span className="font-semibold text-gray-900 dark:text-white">{data.length}</span></span>
                 <ul className="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
                     <li>
@@ -97,7 +97,10 @@ export default function CustomDataTable() {
                             <button 
                             onClick={()=>setCurrentPage(index + 1)}
                             disabled={currentPage == index + 1}
-                            className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{index + 1}</button>
+                            className={
+                                currentPage == index + 1 ? "flex items-center justify-center px-3 h-8 leading-tight text-gray-50 bg-blue-600 border border-blue-300 hover:bg-blue-800 hover:text-white dark:bg-slate-300 dark:border-slate-400 dark:text-slate-800 dark:hover:bg-slate-300 dark:hover:text-white" :
+                                "flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-700"
+                            }>{index + 1}</button>
                           </li>
                         )
                       })
