@@ -15,7 +15,7 @@ export default function CustomDataTable() {
     <div className="mt-8">
       <h2 className="text-xl font-bold mt-6 mb-1 text-center text-slate-800 dark:text-slate-50">Recent Orders</h2>
       {/* Table */}
-      <div className="p-8">
+      <div className="pt-8">
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg z-0" >
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

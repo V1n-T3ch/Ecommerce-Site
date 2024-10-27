@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 import ThemeFetcherBtn from '../ThemeSwitcherBtn'
 
-export default function Navbar() {
+export default function Navbar({ setShowSideBar, showSideBar }) {
   return (
-    <div className="flex items-center justify-between bg-white dark:bg-slate-800 text-slate-50 h-20 px-8 py-4 fixed top-0 w-full ml-60 z-50 pr-[20rem]">
+    <div className="flex items-center justify-between bg-white dark:bg-slate-800 text-slate-50 h-20 px-8 py-4 fixed top-0 w-full  z-50 sm:pr-[20rem]">
       {/* Icon */}
-      <button className="text-green-700 dark:text-green-500">
+      <button className="text-green-700 dark:text-green-500 "onClick={() => setShowSideBar(!showSideBar)}>
         <AlignJustify />
       </button>
       {/* 3 Icons */}
